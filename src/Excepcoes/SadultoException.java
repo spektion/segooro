@@ -9,6 +9,11 @@ package Excepcoes;
  *
  * @author a
  */
-public class SadultoException {
-    
+public class SadultoException extends Exception{
+    public SadultoException() {
+        super();
+    }
+    public SadultoException(String msg){
+        super(msg);
+    }
 }

@@ -9,6 +9,11 @@ package Excepcoes;
  *
  * @author a
  */
-public class SjuniorException {
-    
+public class SjuniorException extends Exception{
+    public SjuniorException() {
+        super();
+    }
+    public SjuniorException(String msg){
+        super(msg);
+    }    
 }

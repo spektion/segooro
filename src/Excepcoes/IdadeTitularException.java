@@ -9,6 +9,11 @@ package Excepcoes;
  *
  * @author a
  */
-public class IdadeTitularException {
-    
+public class IdadeTitularException extends Exception{
+    public IdadeTitularException() {
+        super();
+    }
+    public IdadeTitularException(String msg){
+        super(msg);
+    }
 }
