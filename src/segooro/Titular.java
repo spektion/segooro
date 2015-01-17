@@ -16,13 +16,14 @@ public class Titular  implements Serializable{  //Declaração de Class
    private static int ultimonum=1;  //Para atribiur ID;
    public String nome;  //Nome
    private String morada;  //Morada
-   private Date datanascimento;  //Data de Nascimento
+   public int idade;  //Passamos a considerar idade em vez de data de nascimento.
+   //private Date datanascimento;  //Data de Nascimento
    public int clienteid;  //Cliente ID
    
-   public Titular(String n,String m,Date d){  //Construtor
+   public Titular(String n,String m,int idd){  //Construtor
         this.nome=n;  //Atribui nome
         this.morada=m;  //Atribui morada 
-        this.datanascimento = d;  //Atribui data de nascimento
+        this.idade = idd;  //Atribui data de nascimento
         this.clienteid=ultimonum++;  //Atribui ID
     }
    
@@ -30,9 +31,10 @@ public class Titular  implements Serializable{  //Declaração de Class
     {
         String exit="";  //Variavel de saida
         SimpleDateFormat sdf1= new SimpleDateFormat("dd/MM/yyyy"); //Formatação
-        exit="Dados do Titular: CienteID:"+this.getClienteid()+" Nome:"+this.getNome()+" Morada:"+this.morada+" Data Nascimento:"+sdf1.format(this.datanascimento); //Agrega dados do utilizador       
+        exit="Dados do Titular: CienteID:"+this.getClienteid()+" Nome:"+this.getNome()+" Morada:"+this.morada+" Idade:"+this.idade; //Agrega dados do utilizador       
         return exit;  //Devolve a string
     }
+  
 
     /**
      * @return the nome
@@ -46,5 +48,19 @@ public class Titular  implements Serializable{  //Declaração de Class
      */
     public int getClienteid() {
         return clienteid;
+    }
+
+    /**
+     * @return the idade
+     */
+    public int getIdade() {
+        return idade;
+    }
+
+    /**
+     * @param idade the idade to set
+     */
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 }
