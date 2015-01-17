@@ -223,9 +223,9 @@ public class MainWindow extends javax.swing.JFrame {
        // jTextField1.setText("teste");
         //jTextField1.setText(Integer.toString(bd.listaagentes.size()));
        
-        jTextField1.setText(bd.listaagentes.get(0).getNome());
-        jPanel2.jComboBox1.addItem(bd.listaagentes.get(0).toString());
-       jPanel2.
+        //jTextField1.setText(bd.listaagentes.get(0).getNome());
+        //jPanel2.jComboBox1.addItem(bd.listaagentes.get(0).toString());
+       //jPanel2.
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -255,7 +255,7 @@ public class MainWindow extends javax.swing.JFrame {
         //BD bd = new BD();
         
         //Cliente cliente1=null; //Cliente
-        
+        /*
         try {
             FileInputStream fis = new FileInputStream("dados.dat");
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -266,7 +266,7 @@ public class MainWindow extends javax.swing.JFrame {
         }
         catch(Exception e) {
             System.out.println(e.getMessage());
-        }
+        }*/
         
         /*
         String data;  //Para formatação da data 
