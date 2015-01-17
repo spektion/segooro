@@ -62,6 +62,70 @@ public class MainWindow extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
         
+        /* Criacao Manual de titular/agente/seguros
+        bd.listatitulares.add(new Titular("Tony Ramos","Avenida do Uruguay n13, Buzios",64));
+        bd.listaagentes.add(new Agente("Jose Alberto"));
+        bd.listaclientes.add(new Cliente(bd.listatitulares.get(0),bd.listaagentes.get(0)));
+        
+        //cliente1= new Cliente(new Titular("Tony Ramos","Avenida do Uruguay n13, Buzios",tdata),new Agente("Jose Alberto"));  //Criamos um novo cliente
+        int idade=64;
+        bd.listaclientes.get(0).listaseguros.add(new Tsvida(200)); //Adicionamos um seguro de vida
+        
+        if (idade>80){ //Se tiver acima de 80 não pode fazer seguro
+           System.out.print("A idade nao permite fazer nenhum seguro"); //Mensagem ao utilizador
+        }
+        else
+           if (idade<17){  //Se tiver menos de 17 é junior
+               bd.listaclientes.get(0).listaseguros.add(new Tssaude(100,2500)); //Criado seguro saude junior
+           }
+           else{
+               if (idade>59)  //É senior?
+                 bd.listaclientes.get(0).listaseguros.add(new Tssaude(150+idade,5000)); //Criado seguro saude senior
+               else //Então é adulto
+                 bd.listaclientes.get(0).listaseguros.add(new Tssaude(150+idade,0)); //Criado seguro saude adulto
+           }
+    
+        bd.listaclientes.get(0).despesa_saude(100);  //Adiciona despesa de saude
+        //cliente1.despesa_saude(100000);  //Para testar limite
+        
+        bd.listaclientes.get(0).listaseguros.add(new Tscasa(100)); //Adiciona seguro da casa
+        System.out.print(bd.listaclientes.get(0).toString());  //  Lista tudo
+    
+        bd.listaclientes.get(0).activar_casa();  //Activado seguro da casa
+        System.out.print(bd.listaclientes.get(0).toString());  //  Lista tudo
+        
+        tveiculo tempv=tveiculo.Carro; //Tipo de veiculo a segurar
+        boolean acidentes=false;  //Tem acidentes?
+                
+        if (tempv==tveiculo.Carro){  // É carro?
+            if (acidentes==false)  //Não teve acidentes?
+                bd.listaclientes.get(0).listaseguros.add(new Tsveiculo(250*0.97,tveiculo.Carro,false)); //Desconto de 3%
+            else  // É porque teve acidentes
+                bd.listaclientes.get(0).listaseguros.add(new Tsveiculo(250*1.05,tveiculo.Carro,false)); //Penalização de 5%
+        }
+        else  //Então é mota
+            if (acidentes==false) //Não teve acidentes?
+                bd.listaclientes.get(0).listaseguros.add(new Tsveiculo(150*0.97,tveiculo.Moto,false)); //Desconto de 3%
+            else  // É porque teve acidentes
+                bd.listaclientes.get(0).listaseguros.add(new Tsveiculo(150*1.05,tveiculo.Moto,false)); //Penalização de 5%
+        
+        System.out.print(bd.listaclientes.get(0).toString()); //Lista tudo
+        
+        System.out.println(bd.listaagentes.get(0).nome); */
+        
+        /*
+        try {       
+            FileOutputStream fout = new FileOutputStream("dados.dat");
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            oos.writeObject(bd);
+            oos.close();
+            //System.out.print("SUCESSO");
+        }
+        catch(Exception e) {
+            System.out.println(e.getMessage());
+        }*/
+        
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -230,6 +294,17 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
+        try {       
+            FileOutputStream fout = new FileOutputStream("dados.dat");
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            oos.writeObject(bd);
+            oos.close();
+            System.out.println("SUCESSO");
+            System.out.println(bd.listaclientes.get(0).toString()); //Para teste
+        }
+        catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
         System.exit(0);
     }                                          
 
