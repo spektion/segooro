@@ -300,6 +300,7 @@ public class MainWindow extends javax.swing.JFrame {
             oos.writeObject(bd);
             oos.close();
             System.out.println("SUCESSO");
+            JOptionPane.showMessageDialog(null, "Ficheiro de dados gravado com sucesso");
             System.out.println(bd.listaclientes.get(0).toString()); //Para teste
         }
         catch(Exception e) {
