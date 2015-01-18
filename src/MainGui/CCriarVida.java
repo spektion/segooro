@@ -5,12 +5,15 @@
  */
 package MainGui;
 
+import segooro.*;
+
 /**
  *
  * @author Spek
  */
 public class CCriarVida extends javax.swing.JPanel {
 
+    private BD bd;
     /**
      * Creates new form CCriarVida
      */
@@ -18,6 +21,11 @@ public class CCriarVida extends javax.swing.JPanel {
         initComponents();
     }
 
+    public CCriarVida(BD bd) {
+        this();
+        this.bd=bd;
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -54,6 +62,11 @@ public class CCriarVida extends javax.swing.JPanel {
         });
 
         jButton1.setText("Criar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -105,6 +118,11 @@ public class CCriarVida extends javax.swing.JPanel {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.out.println("criar vida saida");
+        setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

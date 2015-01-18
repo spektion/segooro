@@ -19,6 +19,9 @@ public class JFrameGui extends javax.swing.JFrame {
     private AAdicionar AgenteAd;
     private SelAgente selAgente;
     private ClientesTodos clientesTodos;
+    private CCriarVida cCriarVida;
+    private CCriarSaude cCriarSaude;
+    
     /**
      * Creates new form JFrameGui
      */
@@ -32,6 +35,10 @@ public class JFrameGui extends javax.swing.JFrame {
         jPanel1.add(selAgente, "selagente");
         clientesTodos = new ClientesTodos(bd);
         jPanel1.add(clientesTodos, "clientesTodos");
+        cCriarVida = new CCriarVida(bd);
+        jPanel1.add(cCriarVida, "cCriarVida");
+        cCriarSaude = new CCriarSaude(bd);
+        jPanel1.add(cCriarSaude, "cCriarSaude");
     }
 
     /**
@@ -121,24 +128,22 @@ public class JFrameGui extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem21 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
-        jMenuItem14 = new javax.swing.JMenuItem();
-        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem24 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
+        jMenuItem22 = new javax.swing.JMenuItem();
+        jMenuItem23 = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
         jMenuItem17 = new javax.swing.JMenuItem();
         jMenuItem18 = new javax.swing.JMenuItem();
         jMenu10 = new javax.swing.JMenu();
+        jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem19 = new javax.swing.JMenuItem();
-        jMenuItem20 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -218,51 +223,25 @@ public class JFrameGui extends javax.swing.JFrame {
 
         jMenu4.setText("Seguros");
 
-        jMenu6.setText("Vida");
+        jMenu8.setText("Criar");
 
-        jMenuItem8.setText("Criar");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem24.setText("Saude");
+        jMenuItem24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
+                jMenuItem24ActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem8);
+        jMenu8.add(jMenuItem24);
 
-        jMenuItem9.setText("Activar");
-        jMenu6.add(jMenuItem9);
-
-        jMenuItem10.setText("Cancelar");
-        jMenu6.add(jMenuItem10);
-
-        jMenu4.add(jMenu6);
-
-        jMenu7.setText("Saude");
-
-        jMenuItem11.setText("Criar");
-        jMenu7.add(jMenuItem11);
-
-        jMenuItem12.setText("Apresentar Despesa");
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem10.setText("Vida");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
+                jMenuItem10ActionPerformed(evt);
             }
         });
-        jMenu7.add(jMenuItem12);
+        jMenu8.add(jMenuItem10);
 
-        jMenuItem13.setText("Cancelar");
-        jMenu7.add(jMenuItem13);
-
-        jMenu4.add(jMenu7);
-
-        jMenu8.setText("Casa");
-
-        jMenuItem14.setText("Criar");
-        jMenu8.add(jMenuItem14);
-
-        jMenuItem15.setText("Activar");
-        jMenu8.add(jMenuItem15);
-
-        jMenuItem16.setText("Cancelar");
+        jMenuItem16.setText("Casa");
         jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem16ActionPerformed(evt);
@@ -270,21 +249,30 @@ public class JFrameGui extends javax.swing.JFrame {
         });
         jMenu8.add(jMenuItem16);
 
+        jMenuItem22.setText("Veiculo");
+        jMenu8.add(jMenuItem22);
+
+        jMenuItem23.setText("Moto");
+        jMenu8.add(jMenuItem23);
+
         jMenu4.add(jMenu8);
 
-        jMenu9.setText("Veiculo");
+        jMenu9.setText("Activar");
 
-        jMenuItem17.setText("Criar");
+        jMenuItem17.setText("Vida");
         jMenu9.add(jMenuItem17);
 
-        jMenuItem18.setText("Cancelar");
+        jMenuItem18.setText("Casa");
         jMenu9.add(jMenuItem18);
 
         jMenu4.add(jMenu9);
 
-        jMenu10.setText("Mota");
+        jMenu10.setText("Cancelar");
 
-        jMenuItem19.setText("Criar");
+        jMenuItem12.setText("Saude");
+        jMenu10.add(jMenuItem12);
+
+        jMenuItem19.setText("Vida");
         jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem19ActionPerformed(evt);
@@ -292,10 +280,24 @@ public class JFrameGui extends javax.swing.JFrame {
         });
         jMenu10.add(jMenuItem19);
 
-        jMenuItem20.setText("Cancelar");
-        jMenu10.add(jMenuItem20);
+        jMenuItem8.setText("Casa");
+        jMenu10.add(jMenuItem8);
+
+        jMenuItem9.setText("Veiculo");
+        jMenu10.add(jMenuItem9);
+
+        jMenuItem13.setText("Moto");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem13);
 
         jMenu4.add(jMenu10);
+
+        jMenuItem11.setText("Apresentar despesa");
+        jMenu4.add(jMenuItem11);
 
         jMenuBar1.add(jMenu4);
 
@@ -383,6 +385,18 @@ public class JFrameGui extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
+    private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "cCriarSaude");
+    }//GEN-LAST:event_jMenuItem24ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "cCriarVida");
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -428,8 +442,6 @@ public class JFrameGui extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
@@ -438,15 +450,15 @@ public class JFrameGui extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem21;
+    private javax.swing.JMenuItem jMenuItem22;
+    private javax.swing.JMenuItem jMenuItem23;
+    private javax.swing.JMenuItem jMenuItem24;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
