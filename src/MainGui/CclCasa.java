@@ -10,17 +10,17 @@ import segooro.*;
  *
  * @author Spek
  */
-public class CCriarCasa extends javax.swing.JPanel {
+public class CclCasa extends javax.swing.JPanel {
 
     private BD bd;
     /**
-     * Creates new form CCriarCasa
+     * Creates new form CclCasa
      */
-    public CCriarCasa() {
+    public CclCasa() {
         initComponents();
     }
 
-    public CCriarCasa(BD bd) {
+    public CclCasa(BD bd) {
         this();
         this.bd=bd;
         
@@ -35,10 +35,12 @@ public class CCriarCasa extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainGui/logo_comprido.jpg"))); // NOI18N
+
+        jLabel2.setText("Cancelar seguro casa");
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -47,8 +49,6 @@ public class CCriarCasa extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setText("Criar seguro casa");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -56,14 +56,12 @@ public class CCriarCasa extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(0, 80, Short.MAX_VALUE)))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addContainerGap(90, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -80,7 +78,7 @@ public class CCriarCasa extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.out.println("criar casa saida");
+        System.out.println("Cancelar Casa");
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

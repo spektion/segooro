@@ -10,17 +10,17 @@ import segooro.*;
  *
  * @author Spek
  */
-public class CCriarCasa extends javax.swing.JPanel {
+public class CclSaude extends javax.swing.JPanel {
 
     private BD bd;
     /**
-     * Creates new form CCriarCasa
+     * Creates new form CclSaude
      */
-    public CCriarCasa() {
+    public CclSaude() {
         initComponents();
     }
 
-    public CCriarCasa(BD bd) {
+    public CclSaude(BD bd) {
         this();
         this.bd=bd;
         
@@ -47,7 +47,7 @@ public class CCriarCasa extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setText("Criar seguro casa");
+        jLabel2.setText("Cancelar seguro de saude ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -80,7 +80,7 @@ public class CCriarCasa extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.out.println("criar casa saida");
+        System.out.println("Cancelar Saude");
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

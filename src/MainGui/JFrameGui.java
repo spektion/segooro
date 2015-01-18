@@ -24,6 +24,11 @@ public class JFrameGui extends javax.swing.JFrame {
     private CCriarCasa cCriarCasa;
     private CCriarVeiculo cCriarVeiculo;
     private CCriarMoto cCriarMoto;
+    private CclVida cclVida;
+    private CclSaude cclSaude;
+    private CclCasa cclCasa;
+    private CclVeiculo cclVeiculo;
+    private CclMoto cclMoto;
     
     /**
      * Creates new form JFrameGui
@@ -48,6 +53,16 @@ public class JFrameGui extends javax.swing.JFrame {
         jPanel1.add(cCriarVeiculo, "cCriarVeiculo");
         cCriarMoto = new CCriarMoto(bd);
         jPanel1.add(cCriarMoto, "cCriarMoto");
+        cclVida = new CclVida(bd);
+        jPanel1.add(cclVida, "cclVida");
+        cclSaude = new CclSaude(bd);
+        jPanel1.add(cclSaude, "cclSaude");
+        cclCasa = new CclCasa(bd);
+        jPanel1.add(cclCasa, "cclCasa");
+        cclVeiculo = new CclVeiculo(bd);
+        jPanel1.add(cclVeiculo, "cclVeiculo");
+        cclMoto = new CclMoto(bd);
+        jPanel1.add(cclMoto, "cclMoto");
     }
 
     /**
@@ -289,6 +304,11 @@ public class JFrameGui extends javax.swing.JFrame {
         jMenu10.setText("Cancelar");
 
         jMenuItem12.setText("Saude");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
         jMenu10.add(jMenuItem12);
 
         jMenuItem19.setText("Vida");
@@ -308,6 +328,11 @@ public class JFrameGui extends javax.swing.JFrame {
         jMenu10.add(jMenuItem8);
 
         jMenuItem9.setText("Veiculo");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu10.add(jMenuItem9);
 
         jMenuItem13.setText("Moto");
@@ -380,7 +405,7 @@ public class JFrameGui extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        // TODO add your handling code here:
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "cclSaude");
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
@@ -388,7 +413,7 @@ public class JFrameGui extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
-        // TODO add your handling code here:
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "cclVida");
     }//GEN-LAST:event_jMenuItem19ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -405,8 +430,7 @@ public class JFrameGui extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        // criar segvida
-        
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "cclCasa");
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
@@ -418,7 +442,7 @@ public class JFrameGui extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        // TODO add your handling code here:
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "cclMoto");
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void jMenuItem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem22ActionPerformed
@@ -428,6 +452,10 @@ public class JFrameGui extends javax.swing.JFrame {
     private void jMenuItem23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem23ActionPerformed
         ((CardLayout) jPanel1.getLayout()).show(jPanel1, "cCriarMoto");
     }//GEN-LAST:event_jMenuItem23ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "cclVeiculo");
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     /**
      * @param args the command line arguments
