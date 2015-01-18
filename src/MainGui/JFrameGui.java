@@ -71,6 +71,7 @@ public class JFrameGui extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem21 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -162,6 +163,9 @@ public class JFrameGui extends javax.swing.JFrame {
         jMenuItem7.setText("Listar Conta");
         jMenu3.add(jMenuItem7);
 
+        jMenuItem21.setText("Criar Cliente");
+        jMenu3.add(jMenuItem21);
+
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Seguros");
@@ -169,6 +173,11 @@ public class JFrameGui extends javax.swing.JFrame {
         jMenu6.setText("Vida");
 
         jMenuItem8.setText("Criar");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem8);
 
         jMenuItem9.setText("Activar");
@@ -321,6 +330,11 @@ public class JFrameGui extends javax.swing.JFrame {
         ((CardLayout) jPanel1.getLayout()).show(jPanel1, "clientesTodos");
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // criar segvida
+        
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -382,6 +396,7 @@ public class JFrameGui extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem20;
+    private javax.swing.JMenuItem jMenuItem21;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
