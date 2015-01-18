@@ -5,12 +5,15 @@
  */
 package MainGui;
 
+import segooro.*;
+
 /**
  *
  * @author Spek
  */
 public class SelAgente extends javax.swing.JPanel {
 
+    private BD bd;
     /**
      * Creates new form SelAgente
      */
@@ -18,6 +21,10 @@ public class SelAgente extends javax.swing.JPanel {
         initComponents();
     }
 
+    public SelAgente(BD bd) {
+        this();
+        this.bd=bd;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,6 +39,11 @@ public class SelAgente extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainGui/logo_comprido.jpg"))); // NOI18N
 
@@ -62,6 +74,11 @@ public class SelAgente extends javax.swing.JPanel {
                 .addContainerGap(304, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        for (int i=0;i<bd.listaagentes.size();i++)
+            bd.listaagentes.get(i);
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -16,8 +16,8 @@ import segooro.*;
  */
 public class JFrameGui extends javax.swing.JFrame {
 
-    private Agente agente;
     private AAdicionar AgenteAd;
+    private SelAgente selAgente;
     /**
      * Creates new form JFrameGui
      */
@@ -25,8 +25,10 @@ public class JFrameGui extends javax.swing.JFrame {
     public JFrameGui() {
         initComponents();
         initApp();
-        AgenteAd = new AAdicionar(agente);
+        AgenteAd = new AAdicionar(bd);
         jPanel1.add(AgenteAd, "agenteAd");
+        selAgente = new SelAgente(bd);
+        jPanel1.add(selAgente, "selagente");
     }
 
     /**

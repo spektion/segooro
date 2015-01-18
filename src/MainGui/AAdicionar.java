@@ -7,7 +7,7 @@ package MainGui;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import segooro.Agente;
+import segooro.*;
 
 /**
  *
@@ -16,7 +16,7 @@ import segooro.Agente;
 public class AAdicionar extends javax.swing.JPanel {
 
     
-    private Agente agente;
+    private BD bd;
     /**
      * Creates new form AAdicionar
      */
@@ -24,9 +24,9 @@ public class AAdicionar extends javax.swing.JPanel {
         initComponents();
     }
 
-    public AAdicionar(Agente agente) {
+    public AAdicionar(BD bd) {
         this();
-        this.agente=agente;
+        this.bd=bd;
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -104,7 +104,7 @@ public class AAdicionar extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String nome=jTextField1.getText();
-        //agente.add(nome);
+        bd.agente.add(nome);
         JOptionPane.showMessageDialog(null, "Inserção de agente " + nome + " efectuada com sucesso.");
         jTextField1.setText("");
         setVisible(false);
