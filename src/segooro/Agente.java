@@ -42,4 +42,18 @@ public class Agente implements Serializable {  //Declaracao de class
     public int getAgenteid() {
         return agenteid;
     }
+
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
+     * @param agenteid the agenteid to set
+     */
+    public void setAgenteid(int agenteid) {
+        this.agenteid = agenteid;
+    }
 }

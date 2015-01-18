@@ -13,8 +13,8 @@ import java.util.ArrayList;
  * @author a
  */
 public class Cliente implements Serializable{ //Declaração de class
-    Titular titular;  //  Titular do seguro
-    Agente agente;  //Vendedor do seguro
+    public Titular titular;  //  Titular do seguro
+    public Agente agente;  //Vendedor do seguro
     ArrayList<Seguro> listaseguros;  //lista de seguros deste cliente
     
     public Cliente(Titular t, Agente a){  //Construtor do cliente
@@ -26,7 +26,7 @@ public class Cliente implements Serializable{ //Declaração de class
     public String toString(){  //To string
         String exit="";  //Variavel de saida
         
-        exit=this.titular.toString()+"\n"+this.agente.toString();  //lista titular e agente
+        exit=this.getTitular().toString()+"\n"+this.getAgente().toString();  //lista titular e agente
         for (int i=0;i<this.listaseguros.size();i++)  //percorre a lista de seguros
             exit=exit+"\n"+this.listaseguros.get(i).toString()+"\n";  //Agrega os varios seguros
         return exit;  // Envia a string com o total
@@ -46,4 +46,32 @@ public class Cliente implements Serializable{ //Declaração de class
             }
         }  
     }   
+
+    /**
+     * @return the titular
+     */
+    public Titular getTitular() {
+        return titular;
+    }
+
+    /**
+     * @param titular the titular to set
+     */
+    public void setTitular(Titular titular) {
+        this.titular = titular;
+    }
+
+    /**
+     * @return the agente
+     */
+    public Agente getAgente() {
+        return agente;
+    }
+
+    /**
+     * @param agente the agente to set
+     */
+    public void setAgente(Agente agente) {
+        this.agente = agente;
+    }
 }

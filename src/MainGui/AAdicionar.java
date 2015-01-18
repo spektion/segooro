@@ -28,6 +28,10 @@ public class AAdicionar extends javax.swing.JPanel {
         this();
         this.bd=bd;
     }
+    
+    public void setBd(BD b) {
+        this.bd=b;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -104,7 +108,7 @@ public class AAdicionar extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String nome=jTextField1.getText();
-        bd.agente.add(nome);
+        bd.listaagentes.add(new Agente(nome));
         JOptionPane.showMessageDialog(null, "Inserção de agente " + nome + " efectuada com sucesso.");
         jTextField1.setText("");
         setVisible(false);

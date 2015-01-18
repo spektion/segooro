@@ -76,8 +76,12 @@ public class SelAgente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        for (int i=0;i<bd.listaagentes.size();i++)
-            bd.listaagentes.get(i);
+        String agenteins="";
+        for (int i=0;i<bd.listaagentes.size();i++){
+            agenteins=Integer.toString(bd.listaagentes.get(i).agenteid)+bd.listaagentes.get(i).nome;
+            jComboBox1.add(agenteins, this);
+            agenteins="";
+        }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
 
