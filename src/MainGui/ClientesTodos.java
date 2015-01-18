@@ -103,11 +103,14 @@ public class ClientesTodos extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        for (int i=0;i<bd.listaclientes.size();i++){
-            System.out.println(bd.listaclientes.get(i).toString());
-            jTextArea1.append(bd.listaclientes.get(i).toString());  
+        //jTextArea1.setText("Teste");
+        
+        for (int i=0;i<bd.getListaclientes().size();i++){
+            //System.out.println(bd.listaclientes.get(i).toString());
+            //jTextArea1.append("A lista de clientes tem tamanho:"+Integer.toString(bd.getListaclientes().size()));
+            jTextArea1.append(bd.getListaclientes().get(i).titular.toString());  
         }
-        jTextArea1.append("wtf");
+        //jTextArea1.append("wtf");
         //nao trabuca
     }//GEN-LAST:event_jButton2ActionPerformed
 

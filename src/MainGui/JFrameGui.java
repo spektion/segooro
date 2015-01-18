@@ -52,6 +52,54 @@ public class JFrameGui extends javax.swing.JFrame {
         catch(Exception e) {
             System.out.println(e.getMessage());
         }
+        /* Criacao manual para testes //NAO APAGUES
+        bd.getListatitulares().add(new Titular("Tony Ramos","Avenida do Uruguay n13, Buzios",64));
+        bd.getListaagentes().add(new Agente("Jose Alberto", bd.getListaagentes().size()));
+        bd.getListaclientes().add(new Cliente(bd.getListatitulares().get(0),bd.getListaagentes().get(0)));
+        int idade=64;
+        //cliente1= new Cliente(new Titular("Tony Ramos","Avenida do Uruguay n13, Buzios",tdata),new Agente("Jose Alberto"));  //Criamos um novo cliente
+        
+        bd.getListaclientes().get(0).getListaseguros().add(new Tsvida(200)); //Adicionamos um seguro de vida
+        
+        if (idade>80){ //Se tiver acima de 80 não pode fazer seguro
+           System.out.print("A idade nao permite fazer nenhum seguro"); //Mensagem ao utilizador
+        }
+        else
+           if (idade<17){  //Se tiver menos de 17 é junior
+               bd.getListaclientes().get(0).getListaseguros().add(new Tssaude(100,2500)); //Criado seguro saude junior
+           }
+           else{
+               if (idade>59)  //É senior?
+                 bd.getListaclientes().get(0).getListaseguros().add(new Tssaude(150+idade,5000)); //Criado seguro saude senior
+               else //Então é adulto
+                 bd.getListaclientes().get(0).getListaseguros().add(new Tssaude(150+idade,0)); //Criado seguro saude adulto
+           }
+    
+        bd.getListaclientes().get(0).despesa_saude(100);  //Adiciona despesa de saude
+        //cliente1.despesa_saude(100000);  //Para testar limite
+        
+        bd.getListaclientes().get(0).getListaseguros().add(new Tscasa(100)); //Adiciona seguro da casa
+        System.out.print(bd.getListaclientes().get(0).toString());  //  Lista tudo
+    
+        bd.getListaclientes().get(0).activar_casa();  //Activado seguro da casa
+        System.out.print(bd.getListaclientes().get(0).toString());  //  Lista tudo
+        
+        tveiculo tempv=tveiculo.Carro; //Tipo de veiculo a segurar
+        boolean acidentes=false;  //Tem acidentes?
+                
+        if (tempv==tveiculo.Carro){  // É carro?
+            if (acidentes==false)  //Não teve acidentes?
+                bd.getListaclientes().get(0).getListaseguros().add(new Tsveiculo(250*0.97,tveiculo.Carro,false)); //Desconto de 3%
+            else  // É porque teve acidentes
+                bd.getListaclientes().get(0).getListaseguros().add(new Tsveiculo(250*1.05,tveiculo.Carro,false)); //Penalização de 5%
+        }
+        else  //Então é mota
+            if (acidentes==false) //Não teve acidentes?
+                bd.getListaclientes().get(0).getListaseguros().add(new Tsveiculo(150*0.97,tveiculo.Moto,false)); //Desconto de 3%
+            else  // É porque teve acidentes
+                bd.getListaclientes().get(0).getListaseguros().add(new Tsveiculo(150*1.05,tveiculo.Moto,false)); //Penalização de 5%
+        */
+        
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -368,6 +416,8 @@ public class JFrameGui extends javax.swing.JFrame {
                 new JFrameGui().setVisible(true);
             }
         });
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Cliente implements Serializable{ //Declaração de class
     public Titular titular;  //  Titular do seguro
     public Agente agente;  //Vendedor do seguro
-    ArrayList<Seguro> listaseguros;  //lista de seguros deste cliente
+    public ArrayList<Seguro> listaseguros;  //lista de seguros deste cliente
     
     public Cliente(Titular t, Agente a){  //Construtor do cliente
         this.titular=t;  //Titular
@@ -27,22 +27,22 @@ public class Cliente implements Serializable{ //Declaração de class
         String exit="";  //Variavel de saida
         
         exit=this.getTitular().toString()+"\n"+this.getAgente().toString();  //lista titular e agente
-        for (int i=0;i<this.listaseguros.size();i++)  //percorre a lista de seguros
-            exit=exit+"\n"+this.listaseguros.get(i).toString()+"\n";  //Agrega os varios seguros
+        for (int i=0;i<this.getListaseguros().size();i++)  //percorre a lista de seguros
+            exit=exit+"\n"+this.getListaseguros().get(i).toString()+"\n";  //Agrega os varios seguros
         return exit;  // Envia a string com o total
     }
     
     public void despesa_saude(double d){  //Metodo para activar despesa de saude
-        for (int i=0;i<this.listaseguros.size();i++){  //percorre a lista de seguros
-            if ((this.listaseguros.get(i).getTipo()==tseguro.Saude)&&(this.listaseguros.get(i).isActivo()==true)){ //Se houver algum seguro de saude e estiver activo
-                this.listaseguros.get(i).despesa(d); //Vai activar a despesa para ser reembolsado
+        for (int i=0;i<this.getListaseguros().size();i++){  //percorre a lista de seguros
+            if ((this.getListaseguros().get(i).getTipo()==tseguro.Saude)&&(this.getListaseguros().get(i).isActivo()==true)){ //Se houver algum seguro de saude e estiver activo
+                this.getListaseguros().get(i).despesa(d); //Vai activar a despesa para ser reembolsado
             }
         }
     }
     public void activar_casa(){  //Metodo para activar seguro da casa
-       for (int i=0;i<this.listaseguros.size();i++){  //percorre a lista de seguros
-            if ((this.listaseguros.get(i).getTipo()==tseguro.Casa)&&(this.listaseguros.get(i).isActivo()==true)){//Se houver algum seguro de casa e estiver activo
-                this.listaseguros.get(i).casa();  //Vai activar seguro da casa e ser reembolsado
+       for (int i=0;i<this.getListaseguros().size();i++){  //percorre a lista de seguros
+            if ((this.getListaseguros().get(i).getTipo()==tseguro.Casa)&&(this.getListaseguros().get(i).isActivo()==true)){//Se houver algum seguro de casa e estiver activo
+                this.getListaseguros().get(i).casa();  //Vai activar seguro da casa e ser reembolsado
             }
         }  
     }   
@@ -73,5 +73,19 @@ public class Cliente implements Serializable{ //Declaração de class
      */
     public void setAgente(Agente agente) {
         this.agente = agente;
+    }
+
+    /**
+     * @return the listaseguros
+     */
+    public ArrayList<Seguro> getListaseguros() {
+        return listaseguros;
+    }
+
+    /**
+     * @param listaseguros the listaseguros to set
+     */
+    public void setListaseguros(ArrayList<Seguro> listaseguros) {
+        this.listaseguros = listaseguros;
     }
 }
