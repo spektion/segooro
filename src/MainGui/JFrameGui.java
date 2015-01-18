@@ -5,6 +5,7 @@
  */
 package MainGui;
 
+import java.awt.CardLayout;
 import java.io.*;
 import javax.swing.JOptionPane;
 import segooro.*;
@@ -15,6 +16,7 @@ import segooro.*;
  */
 public class JFrameGui extends javax.swing.JFrame {
 
+    private AAdicionar AgenteAd;
     /**
      * Creates new form JFrameGui
      */
@@ -22,6 +24,8 @@ public class JFrameGui extends javax.swing.JFrame {
     public JFrameGui() {
         initComponents();
         initApp();
+        AgenteAd = new AAdicionar();
+        jPanel1.add(AgenteAd, "agenteAd");
     }
 
     /**
@@ -47,7 +51,8 @@ public class JFrameGui extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -83,7 +88,11 @@ public class JFrameGui extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainGui/logo.jpg"))); // NOI18N
+        jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
+        jPanel1.setLayout(new java.awt.CardLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainGui/logo.jpg"))); // NOI18N
+        jPanel1.add(jLabel2, "card2");
 
         jMenu1.setText("Gerir");
 
@@ -120,6 +129,11 @@ public class JFrameGui extends javax.swing.JFrame {
         jMenu2.add(jMenuItem1);
 
         jMenuItem5.setText("Adicionar");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
 
         jMenuBar1.add(jMenu2);
@@ -221,11 +235,11 @@ public class JFrameGui extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -278,6 +292,10 @@ public class JFrameGui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem19ActionPerformed
 
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "agenteAd");
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -314,7 +332,7 @@ public class JFrameGui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
@@ -346,6 +364,7 @@ public class JFrameGui extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
