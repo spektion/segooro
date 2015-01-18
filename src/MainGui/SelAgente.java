@@ -97,14 +97,9 @@ public class SelAgente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        /*String agenteins="";
         
-        for (int i=0;i<bd.listaagentes.size();i++){
-            agenteins=Integer.toString(bd.listaagentes.get(i).agenteid)+bd.listaagentes.get(i).nome;
-            //jPanel2.jComboBox1.addItem(bd.listaagentes.get(0).toString());
-            jComboBox1.addItem(bd.listaagentes.get(0).toString());
-            agenteins="";
-        }*/
+        //jComboBox1.actionPerformed(evt);
+        setVisible(false);
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -114,7 +109,6 @@ public class SelAgente extends javax.swing.JPanel {
         jComboBox1.removeAllItems();
         
         for (int i=0;i<bd.listaagentes.size();i++){
-            System.out.println(bd.listaagentes.get(i).toString());
             agenteins=Integer.toString(bd.listaagentes.get(i).agenteid)+bd.listaagentes.get(i).nome;
             //jPanel2.jComboBox1.addItem(bd.listaagentes.get(0).toString());
             jComboBox1.addItem(bd.listaagentes.get(i).toString());

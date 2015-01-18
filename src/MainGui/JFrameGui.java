@@ -18,6 +18,7 @@ public class JFrameGui extends javax.swing.JFrame {
 
     private AAdicionar AgenteAd;
     private SelAgente selAgente;
+    private ClientesTodos clientesTodos;
     /**
      * Creates new form JFrameGui
      */
@@ -29,6 +30,8 @@ public class JFrameGui extends javax.swing.JFrame {
         jPanel1.add(AgenteAd, "agenteAd");
         selAgente = new SelAgente(bd);
         jPanel1.add(selAgente, "selagente");
+        clientesTodos = new ClientesTodos(bd);
+        jPanel1.add(clientesTodos, "clientesTodos");
     }
 
     /**
@@ -149,6 +152,11 @@ public class JFrameGui extends javax.swing.JFrame {
         jMenu3.setText("Clientes");
 
         jMenuItem6.setText("Listar Todos");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem6);
 
         jMenuItem7.setText("Listar Conta");
@@ -308,6 +316,10 @@ public class JFrameGui extends javax.swing.JFrame {
         // TODO add your handling code here:
         ((CardLayout) jPanel1.getLayout()).show(jPanel1, "selagente");
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "clientesTodos");
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments
