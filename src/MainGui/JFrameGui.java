@@ -306,7 +306,7 @@ public class JFrameGui extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "agenteLi");
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "selagente");
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**

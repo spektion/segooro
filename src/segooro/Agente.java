@@ -12,14 +12,14 @@ import java.io.Serializable;
  * @author a
  */
 public class Agente implements Serializable {  //Declaracao de class
-   private static int ultimonum=1;  //Controla o ID dos Agentes
+   //private int ultimonum=1;  //Controla o ID dos Agentes
    public String nome; //Nome do agente
    public int agenteid;  //Id do agente
    
-   public Agente(String n)  //Contrutor
+   public Agente(String n, int nagentes)  //Contrutor
     {
         this.nome=n;  //Atribui o nome
-        this.agenteid=ultimonum++;  //Atribui o ID
+        this.agenteid=nagentes+1;  //Atribui o ID
     }
    
    public String toString() //To String

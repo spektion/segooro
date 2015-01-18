@@ -24,6 +24,15 @@ public class SelAgente extends javax.swing.JPanel {
     public SelAgente(BD bd) {
         this();
         this.bd=bd;
+        String agenteins="";
+        
+        for (int i=0;i<bd.listaagentes.size();i++){
+            //System.out.println(bd.listaagentes.get(i).toString());
+            agenteins=Integer.toString(bd.listaagentes.get(i).agenteid)+bd.listaagentes.get(i).nome;
+            //jPanel2.jComboBox1.addItem(bd.listaagentes.get(0).toString());
+            jComboBox1.addItem(bd.listaagentes.get(i).toString());
+            agenteins="";
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,7 +47,6 @@ public class SelAgente extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -76,12 +84,14 @@ public class SelAgente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        String agenteins="";
+        /*String agenteins="";
+        
         for (int i=0;i<bd.listaagentes.size();i++){
             agenteins=Integer.toString(bd.listaagentes.get(i).agenteid)+bd.listaagentes.get(i).nome;
-            jComboBox1.add(agenteins, this);
+            //jPanel2.jComboBox1.addItem(bd.listaagentes.get(0).toString());
+            jComboBox1.addItem(bd.listaagentes.get(0).toString());
             agenteins="";
-        }
+        }*/
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
 
