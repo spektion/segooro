@@ -31,6 +31,10 @@ public class JFrameGui extends javax.swing.JFrame {
     private CclMoto cclMoto;
     private ActVida actVida;
     private ActCasa actCasa;
+    private ApDespesa apDespesa;
+    private CriarCli criarCli;
+    private ListarConta listarConta;
+    private About about;
     
     /**
      * Creates new form JFrameGui
@@ -69,6 +73,14 @@ public class JFrameGui extends javax.swing.JFrame {
         jPanel1.add(actVida, "actVida");
         actCasa = new ActCasa(bd);
         jPanel1.add(actCasa, "actCasa");
+        apDespesa = new ApDespesa(bd);
+        jPanel1.add(apDespesa, "apDespesa");
+        criarCli = new CriarCli(bd);
+        jPanel1.add(criarCli, "criarCli");
+        listarConta = new ListarConta(bd);
+        jPanel1.add(listarConta, "listarConta");
+        about = new About();
+        jPanel1.add(about, "about");
     }
 
     /**
@@ -175,6 +187,7 @@ public class JFrameGui extends javax.swing.JFrame {
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItem14 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -244,9 +257,19 @@ public class JFrameGui extends javax.swing.JFrame {
         jMenu3.add(jMenuItem6);
 
         jMenuItem7.setText("Listar Conta");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem7);
 
         jMenuItem21.setText("Criar Cliente");
+        jMenuItem21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem21ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem21);
 
         jMenuBar1.add(jMenu3);
@@ -362,11 +385,25 @@ public class JFrameGui extends javax.swing.JFrame {
         jMenu4.add(jMenu10);
 
         jMenuItem11.setText("Apresentar despesa");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem11);
 
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("About");
+
+        jMenuItem14.setText("Creditos");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem14);
+
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
@@ -481,6 +518,22 @@ public class JFrameGui extends javax.swing.JFrame {
         ((CardLayout) jPanel1.getLayout()).show(jPanel1, "actCasa");
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "apDespesa");
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "criarCli");
+    }//GEN-LAST:event_jMenuItem21ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "listarConta");
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "about");
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -534,6 +587,7 @@ public class JFrameGui extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
