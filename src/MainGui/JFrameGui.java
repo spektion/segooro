@@ -29,6 +29,8 @@ public class JFrameGui extends javax.swing.JFrame {
     private CclCasa cclCasa;
     private CclVeiculo cclVeiculo;
     private CclMoto cclMoto;
+    private ActVida actVida;
+    private ActCasa actCasa;
     
     /**
      * Creates new form JFrameGui
@@ -63,6 +65,10 @@ public class JFrameGui extends javax.swing.JFrame {
         jPanel1.add(cclVeiculo, "cclVeiculo");
         cclMoto = new CclMoto(bd);
         jPanel1.add(cclMoto, "cclMoto");
+        actVida = new ActVida(bd);
+        jPanel1.add(actVida, "actVida");
+        actCasa = new ActCasa(bd);
+        jPanel1.add(actCasa, "actCasa");
     }
 
     /**
@@ -294,9 +300,19 @@ public class JFrameGui extends javax.swing.JFrame {
         jMenu9.setText("Activar");
 
         jMenuItem17.setText("Vida");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
         jMenu9.add(jMenuItem17);
 
         jMenuItem18.setText("Casa");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
         jMenu9.add(jMenuItem18);
 
         jMenu4.add(jMenu9);
@@ -456,6 +472,14 @@ public class JFrameGui extends javax.swing.JFrame {
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         ((CardLayout) jPanel1.getLayout()).show(jPanel1, "cclVeiculo");
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "actVida");
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "actCasa");
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     /**
      * @param args the command line arguments
