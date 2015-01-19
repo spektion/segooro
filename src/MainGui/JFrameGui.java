@@ -103,7 +103,7 @@ public class JFrameGui extends javax.swing.JFrame {
         catch(Exception e) {
             System.out.println(e.getMessage());
         }
-        
+        /*
         // Criacao manual para testes //NAO APAGUES
         bd.getListatitulares().add(new Titular("Vitor Philipe","Avenida do Uruguay n13, Buzios",64));
         bd.getListaagentes().add(new Agente("Joaquim Rato", bd.getListaagentes().size()));
@@ -129,7 +129,7 @@ public class JFrameGui extends javax.swing.JFrame {
     
         bd.getListaclientes().get(0).despesa_saude(100);  //Adiciona despesa de saude
         //cliente1.despesa_saude(100000);  //Para testar limite
-        */
+        
         bd.getListaclientes().get(0).getListaseguros().add(new Tscasa(100)); //Adiciona seguro da casa
         System.out.print(bd.getListaclientes().get(0).toString());  //  Lista tudo
     
@@ -161,7 +161,7 @@ public class JFrameGui extends javax.swing.JFrame {
         }
         catch(Exception e) {
             System.out.println(e.getMessage());
-        }
+        }*/
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
