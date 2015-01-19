@@ -13,6 +13,7 @@ import segooro.*;
 public class CCriarSaude extends javax.swing.JPanel {
 
     private BD bd;
+    String ff;
     /**
      * Creates new form CCriarSaude
      */
