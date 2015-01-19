@@ -15,6 +15,7 @@ public class Agente implements Serializable {  //Declaracao de class
    //private int ultimonum=1;  //Controla o ID dos Agentes
    public String nome; //Nome do agente
    public int agenteid;  //Id do agente
+   public boolean activo=false;
    
    public Agente(String n, int nagentes)  //Contrutor
     {
@@ -25,7 +26,7 @@ public class Agente implements Serializable {  //Declaracao de class
    public String toString() //To String
     {
         String exit="";  //Declaração de variavel de saida;
-        exit="Dados do Agente: AgenteID:"+this.getAgenteid()+" Nome:"+this.getNome();  //Atribuição       
+        exit=this.getAgenteid()+" Nome:"+this.getNome();  //Atribuição       
         return exit;  //Saida
     } 
 
