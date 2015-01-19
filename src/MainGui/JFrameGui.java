@@ -35,6 +35,7 @@ public class JFrameGui extends javax.swing.JFrame {
     private CriarCli criarCli;
     private ListarConta listarConta;
     private About about;
+    private int opcaoagente;
     
     /**
      * Creates new form JFrameGui
@@ -47,6 +48,7 @@ public class JFrameGui extends javax.swing.JFrame {
         jPanel1.add(AgenteAd, "agenteAd");
         selAgente = new SelAgente(bd);
         jPanel1.add(selAgente, "selagente");
+        //selAgente.
         clientesTodos = new ClientesTodos(bd);
         jPanel1.add(clientesTodos, "clientesTodos");
         cCriarVida = new CCriarVida(bd);
@@ -101,15 +103,16 @@ public class JFrameGui extends javax.swing.JFrame {
         catch(Exception e) {
             System.out.println(e.getMessage());
         }
-        /* Criacao manual para testes //NAO APAGUES
-        bd.getListatitulares().add(new Titular("Tony Ramos","Avenida do Uruguay n13, Buzios",64));
-        bd.getListaagentes().add(new Agente("Jose Alberto", bd.getListaagentes().size()));
-        bd.getListaclientes().add(new Cliente(bd.getListatitulares().get(0),bd.getListaagentes().get(0)));
+        
+        // Criacao manual para testes //NAO APAGUES
+        bd.getListatitulares().add(new Titular("Vitor Philipe","Avenida do Uruguay n13, Buzios",64));
+        bd.getListaagentes().add(new Agente("Joaquim Rato", bd.getListaagentes().size()));
+        bd.getListaclientes().add(new Cliente(bd.getListatitulares().get(0),bd.getListaagentes().get(8)));
         int idade=64;
         //cliente1= new Cliente(new Titular("Tony Ramos","Avenida do Uruguay n13, Buzios",tdata),new Agente("Jose Alberto"));  //Criamos um novo cliente
         
         bd.getListaclientes().get(0).getListaseguros().add(new Tsvida(200)); //Adicionamos um seguro de vida
-        
+        /*
         if (idade>80){ //Se tiver acima de 80 não pode fazer seguro
            System.out.print("A idade nao permite fazer nenhum seguro"); //Mensagem ao utilizador
         }
@@ -126,7 +129,7 @@ public class JFrameGui extends javax.swing.JFrame {
     
         bd.getListaclientes().get(0).despesa_saude(100);  //Adiciona despesa de saude
         //cliente1.despesa_saude(100000);  //Para testar limite
-        
+        */
         bd.getListaclientes().get(0).getListaseguros().add(new Tscasa(100)); //Adiciona seguro da casa
         System.out.print(bd.getListaclientes().get(0).toString());  //  Lista tudo
     
@@ -147,8 +150,18 @@ public class JFrameGui extends javax.swing.JFrame {
                 bd.getListaclientes().get(0).getListaseguros().add(new Tsveiculo(150*0.97,tveiculo.Moto,false)); //Desconto de 3%
             else  // É porque teve acidentes
                 bd.getListaclientes().get(0).getListaseguros().add(new Tsveiculo(150*1.05,tveiculo.Moto,false)); //Penalização de 5%
-        */
         
+        try {       
+            FileOutputStream fout = new FileOutputStream("dados.dat");
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            oos.writeObject(bd);
+            oos.close();
+            System.out.println("SUCESSO");
+            JOptionPane.showMessageDialog(null, "Ficheiro de dados gravado com sucesso");
+        }
+        catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -476,6 +489,10 @@ public class JFrameGui extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         ((CardLayout) jPanel1.getLayout()).show(jPanel1, "selagente");
+        /*for (int i=0;i<bd.listaagentes.size();i++){
+        if (bd.listaagentes.get(i).activo==true)
+            System.out.println(bd.listaagentes.get(i).toString());
+        }*/
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed

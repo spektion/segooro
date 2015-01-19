@@ -14,6 +14,7 @@ import segooro.*;
 public class SelAgente extends javax.swing.JPanel {
 
     private BD bd;
+    //private int opcaoagente;
     /**
      * Creates new form SelAgente
      */
@@ -97,9 +98,20 @@ public class SelAgente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        String opcao=(String)jComboBox1.getSelectedItem();
         
+        if (opcao==null)
+           opcao="1";
+        int opcaoagente=0;
+ 
+        for (int i=0;i<bd.listaagentes.size();i++)
+            bd.listaagentes.get(i).activo=false;
+                //}
         //jComboBox1.actionPerformed(evt);
+        
         setVisible(false);
+        opcaoagente=Integer.parseInt(opcao.substring(0, 1));
+        bd.listaagentes.get(opcaoagente-1).activo=true;
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -123,4 +135,9 @@ public class SelAgente extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the opcaoagente
+     */
+    
 }
