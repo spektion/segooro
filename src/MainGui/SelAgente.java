@@ -53,7 +53,7 @@ public class SelAgente extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Selecionar Agente");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Sair");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -97,14 +97,24 @@ private void combopop(){
         
         int agenteactivo=-1;
         
+                
+        for (int i=0;i<bd.getListaagentes().size();i++){
+            //System.out.println(bd.listaagentes.get(i).toString());
+            agenteins=Integer.toString(bd.getListaagentes().get(i).agenteid)+bd.getListaagentes().get(i).nome;
+            //jPanel2.jComboBox1.addItem(bd.listaagentes.get(0).toString());
+            jComboBox1.addItem(bd.getListaagentes().get(i).toString());
+            agenteins="";
+        }
+        
+        /*
         for (int i=0;i<bd.getListaagentes().size();i++){
             if (bd.listaagentes.get(i).activo==true){
                 agenteactivo=i;
             }
         }
         
-        for (int i=0;i<bd.getListaclientes().size();i++){
-            if ((bd.listaclientes.get(i).agente) == bd.listaagentes.get(agenteactivo)){
+        for (int i=0;i<bd.getListaagentes().size();i++){
+            if ((bd.getListaagentes.get(i).agente) == bd.listaagentes.get(agenteactivo)){
                 for (int j=0; j<bd.listaclientes.get(i).listaseguros.size();j++)
                     if (bd.listaclientes.get(i).listaseguros.get(j).tipo==tseguro.Saude)
                         break;
@@ -112,7 +122,7 @@ private void combopop(){
                 jComboBox1.addItem(bd.getListaclientes().get(i).titular.toString()+"\n"); 
             }
              
-        }
+        }*/
     }
     
     
@@ -130,7 +140,7 @@ private void combopop(){
         //jComboBox1.actionPerformed(evt);
         
         setVisible(false);
-        opcaoagente=Integer.parseInt(opcao.substring(27, 28));
+        opcaoagente=Integer.parseInt(opcao.substring(0, 1));
         bd.listaagentes.get(opcaoagente-1).activo=true;
     }//GEN-LAST:event_jComboBox1ActionPerformed
 

@@ -8,19 +8,19 @@ package MainGui;
 import segooro.*;
 /**
  *
- * @author Spek
+ * @author Gonçalo Faria
  */
-public class CclCasa extends javax.swing.JPanel {
+public class ActiVida extends javax.swing.JPanel {
 
     private BD bd;
     /**
-     * Creates new form CclCasa
+     * Creates new form ActiVida
      */
-    public CclCasa() {
+    public ActiVida() {
         initComponents();
     }
 
-    public CclCasa(BD bd) {
+    public ActiVida(BD bd) {
         this();
         this.bd=bd;
         
@@ -40,7 +40,7 @@ public class CclCasa extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainGui/logo_comprido.jpg"))); // NOI18N
 
-        jLabel2.setText("Cancelar seguro casa");
+        jLabel2.setText("Activa vida");
 
         jButton1.setText("Sair");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +78,6 @@ public class CclCasa extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.out.println("Cancelar Casa");
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

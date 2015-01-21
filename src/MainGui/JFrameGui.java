@@ -29,7 +29,7 @@ public class JFrameGui extends javax.swing.JFrame {
     private CclCasa cclCasa;
     private CclVeiculo cclVeiculo;
     private CclMoto cclMoto;
-    private ActVida actVida;
+    private ActiVida actiVida;
     private ActCasa actCasa;
     private ApDespesa apDespesa;
     private CriarCli criarCli;
@@ -71,8 +71,8 @@ public class JFrameGui extends javax.swing.JFrame {
         jPanel1.add(cclVeiculo, "cclVeiculo");
         cclMoto = new CclMoto(bd);
         jPanel1.add(cclMoto, "cclMoto");
-        actVida = new ActVida(bd);
-        jPanel1.add(actVida, "actVida");
+        actiVida = new ActiVida(bd);
+        jPanel1.add(actiVida, "actiVida");
         actCasa = new ActCasa(bd);
         jPanel1.add(actCasa, "actCasa");
         apDespesa = new ApDespesa(bd);
@@ -529,7 +529,7 @@ public class JFrameGui extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
-        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "actVida");
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "actiVida");
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
