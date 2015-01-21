@@ -107,7 +107,7 @@ public class JFrameGui extends javax.swing.JFrame {
         // Criacao manual para testes //NAO APAGUES
         bd.getListatitulares().add(new Titular("Vitor Philipe","Avenida do Uruguay n13, Buzios",64));
         bd.getListaagentes().add(new Agente("Joaquim Rato", bd.getListaagentes().size()));
-        bd.getListaclientes().add(new Cliente(bd.getListatitulares().get(0),bd.getListaagentes().get(8)));
+        bd.getListaclientes().add(new Cliente(bd.getListatitulares().get(0),bd.getListaagentes().get(0)));
         int idade=64;
         //cliente1= new Cliente(new Titular("Tony Ramos","Avenida do Uruguay n13, Buzios",tdata),new Agente("Jose Alberto"));  //Criamos um novo cliente
         

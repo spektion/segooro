@@ -5,6 +5,7 @@
  */
 package MainGui;
 
+import javax.swing.JOptionPane;
 import segooro.*;
 /**
  *
@@ -23,7 +24,7 @@ public class CCriarSaude extends javax.swing.JPanel {
     public CCriarSaude(BD bd) {
         this();
         this.bd=bd;
-        
+        jComboBox1.removeAllItems();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,7 +43,7 @@ public class CCriarSaude extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainGui/logo_comprido.jpg"))); // NOI18N
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Criar Seguro");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -52,8 +53,13 @@ public class CCriarSaude extends javax.swing.JPanel {
         jLabel2.setText("Criar seguro saude");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Actualizar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -99,7 +105,36 @@ public class CCriarSaude extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.out.println("criar saude saida");
+        int agenteactivo=-1;
+        
+            for (int i=0;i<bd.getListaagentes().size();i++){
+                if (bd.listaagentes.get(i).activo==true){
+                    agenteactivo=i;
+                }
+            }
+        
+        int clienteactivo=-1;
+        for (int i=0;i<bd.getListaclientes().size();i++){
+                if (bd.listaclientes.get(i).activo==true){
+                    clienteactivo=i;
+                }
+            }    
+        
+        if (bd.listaclientes.get(clienteactivo).titular.idade>80){ //Se tiver acima de 80 não pode fazer seguro
+           JOptionPane.showMessageDialog(null,"A idade nao permite fazer nenhum seguro"); //Mensagem ao utilizador
+        }
+        else
+           if (bd.listaclientes.get(clienteactivo).titular.idade<17){  //Se tiver menos de 17 é junior
+               bd.getListaclientes().get(clienteactivo).getListaseguros().add(new Tssaude(100,2500)); //Criado seguro saude junior
+           }
+           else{
+               if (bd.listaclientes.get(clienteactivo).titular.idade>59)  //É senior?
+                 bd.getListaclientes().get(0).getListaseguros().add(new Tssaude(150+bd.listaclientes.get(clienteactivo).titular.idade,5000)); //Criado seguro saude senior
+               else //Então é adulto
+                 bd.getListaclientes().get(0).getListaseguros().add(new Tssaude(150+bd.listaclientes.get(clienteactivo).titular.idade,0)); //Criado seguro saude adulto
+           }
+
+        //System.out.println("criar saude saida");
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -129,6 +164,10 @@ public class CCriarSaude extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

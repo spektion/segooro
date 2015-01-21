@@ -16,11 +16,14 @@ public class Cliente implements Serializable{ //Declaração de class
     public Titular titular;  //  Titular do seguro
     public Agente agente;  //Vendedor do seguro
     public ArrayList<Seguro> listaseguros;  //lista de seguros deste cliente
+    public boolean activo; 
+    
     
     public Cliente(Titular t, Agente a){  //Construtor do cliente
         this.titular=t;  //Titular
         this.agente=a;  //Agente
         this.listaseguros= new ArrayList(); //lista de seguros
+        this.activo=false;
     }
     
     public String toString(){  //To string
@@ -87,5 +90,19 @@ public class Cliente implements Serializable{ //Declaração de class
      */
     public void setListaseguros(ArrayList<Seguro> listaseguros) {
         this.listaseguros = listaseguros;
+    }
+
+    /**
+     * @return the activo
+     */
+    public boolean isActivo() {
+        return activo;
+    }
+
+    /**
+     * @param activo the activo to set
+     */
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 }

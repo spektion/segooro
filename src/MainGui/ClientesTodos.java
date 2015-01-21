@@ -104,12 +104,13 @@ public class ClientesTodos extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //jTextArea1.setText("Teste");
-        
+        jTextArea1.setText("");
         for (int i=0;i<bd.getListaclientes().size();i++){
             //System.out.println(bd.listaclientes.get(i).toString());
             //jTextArea1.append("A lista de clientes tem tamanho:"+Integer.toString(bd.getListaclientes().size()));
             jTextArea1.append(bd.getListaclientes().get(i).titular.toString()+"\n");  
         }
+        //jTextArea1.setText("");
         //jTextArea1.append("wtf");
         //nao trabuca
     }//GEN-LAST:event_jButton2ActionPerformed
