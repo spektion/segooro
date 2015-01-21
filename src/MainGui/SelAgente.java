@@ -25,17 +25,8 @@ public class SelAgente extends javax.swing.JPanel {
     public SelAgente(BD bd) {
         this();
         this.bd=bd;
-        String agenteins="";
+        combopop();
         
-        jComboBox1.removeAllItems();
-        
-        for (int i=0;i<bd.getListaagentes().size();i++){
-            //System.out.println(bd.listaagentes.get(i).toString());
-            agenteins=Integer.toString(bd.getListaagentes().get(i).agenteid)+bd.getListaagentes().get(i).nome;
-            //jPanel2.jComboBox1.addItem(bd.listaagentes.get(0).toString());
-            jComboBox1.addItem(bd.getListaagentes().get(i).toString());
-            agenteins="";
-        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -62,7 +53,7 @@ public class SelAgente extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Selecionar Agente");
 
-        jButton1.setText("Actualizar");
+        jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -76,11 +67,14 @@ public class SelAgente extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addContainerGap(278, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,12 +85,38 @@ public class SelAgente extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addGap(27, 27, 27)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 264, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
+private void combopop(){
+    String agenteins="";
+        
+        jComboBox1.removeAllItems();
+        
+        int agenteactivo=-1;
+        
+        for (int i=0;i<bd.getListaagentes().size();i++){
+            if (bd.listaagentes.get(i).activo==true){
+                agenteactivo=i;
+            }
+        }
+        
+        for (int i=0;i<bd.getListaclientes().size();i++){
+            if ((bd.listaclientes.get(i).agente) == bd.listaagentes.get(agenteactivo)){
+                for (int j=0; j<bd.listaclientes.get(i).listaseguros.size();j++)
+                    if (bd.listaclientes.get(i).listaseguros.get(j).tipo==tseguro.Saude)
+                        break;
+                System.out.println(bd.getListaclientes().get(i).titular.toString());
+                jComboBox1.addItem(bd.getListaclientes().get(i).titular.toString()+"\n"); 
+            }
+             
+        }
+    }
+    
+    
+    
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         String opcao=(String)jComboBox1.getSelectedItem();
         
@@ -110,22 +130,12 @@ public class SelAgente extends javax.swing.JPanel {
         //jComboBox1.actionPerformed(evt);
         
         setVisible(false);
-        opcaoagente=Integer.parseInt(opcao.substring(0, 1));
+        opcaoagente=Integer.parseInt(opcao.substring(27, 28));
         bd.listaagentes.get(opcaoagente-1).activo=true;
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        String agenteins="";
-        
-        jComboBox1.removeAllItems();
-        
-        for (int i=0;i<bd.getListaagentes().size();i++){
-            agenteins=Integer.toString(bd.getListaagentes().get(i).agenteid)+bd.getListaagentes().get(i).nome;
-            //jPanel2.jComboBox1.addItem(bd.listaagentes.get(0).toString());
-            jComboBox1.addItem(bd.getListaagentes().get(i).toString());
-            agenteins="";
-        }
+        setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

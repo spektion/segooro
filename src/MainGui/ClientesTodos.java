@@ -23,7 +23,7 @@ public class ClientesTodos extends javax.swing.JPanel {
     public ClientesTodos(BD bd) {
         this();
         this.bd=bd;
-        
+        textpop();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,7 +38,6 @@ public class ClientesTodos extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -52,13 +51,6 @@ public class ClientesTodos extends javax.swing.JPanel {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Actualizar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 
@@ -76,12 +68,9 @@ public class ClientesTodos extends javax.swing.JPanel {
                         .addComponent(jLabel2)
                         .addGap(0, 295, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 544, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton2)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton1))
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
@@ -95,26 +84,17 @@ public class ClientesTodos extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addComponent(jButton1)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //jTextArea1.setText("Teste");
-        jTextArea1.setText("");
+    private void textpop() {
         for (int i=0;i<bd.getListaclientes().size();i++){
-            //System.out.println(bd.listaclientes.get(i).toString());
-            //jTextArea1.append("A lista de clientes tem tamanho:"+Integer.toString(bd.getListaclientes().size()));
             jTextArea1.append(bd.getListaclientes().get(i).titular.toString()+"\n");  
         }
-        //jTextArea1.setText("");
-        //jTextArea1.append("wtf");
-        //nao trabuca
-    }//GEN-LAST:event_jButton2ActionPerformed
-
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jTextArea1.removeAll();
         setVisible(false);
@@ -123,7 +103,6 @@ public class ClientesTodos extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;

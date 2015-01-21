@@ -40,7 +40,7 @@ public class CCriarCasa extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainGui/logo_comprido.jpg"))); // NOI18N
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Sair");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
