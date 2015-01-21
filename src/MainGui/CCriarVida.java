@@ -24,7 +24,7 @@ public class CCriarVida extends javax.swing.JPanel {
     public CCriarVida(BD bd) {
         this();
         this.bd=bd;
-        
+        combopop();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -128,6 +128,31 @@ public class CCriarVida extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void combopop(){
+    String agenteins="";
+        
+        jComboBox1.removeAllItems();
+        
+        int agenteactivo=-1;
+        
+        for (int i=0;i<bd.getListaagentes().size();i++){
+            if (bd.listaagentes.get(i).activo==true){
+                agenteactivo=i;
+            }
+        }
+        
+        for (int i=0;i<bd.getListaclientes().size();i++){
+            if ((bd.listaclientes.get(i).agente) == bd.listaagentes.get(agenteactivo)){
+                for (int j=0; j<bd.listaclientes.get(i).listaseguros.size();j++)
+                    if (bd.listaclientes.get(i).listaseguros.get(j).tipo==tseguro.Saude)
+                        break;
+                System.out.println(bd.getListaclientes().get(i).titular.toString());
+                jComboBox1.addItem(bd.getListaclientes().get(i).titular.toString()+"\n"); 
+            }
+             
+        }
+    }
+    
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
