@@ -5,6 +5,7 @@
  */
 package MainGui;
 
+import javax.swing.JOptionPane;
 import segooro.*;
 /**
  *
@@ -122,8 +123,20 @@ public class ApDespesa extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
+        float despesa=Float.parseFloat(jTextField1.getText());
+        int clienteactivo=0;
+        for (int i=0;i<bd.getListaclientes().size();i++){
+                if (bd.listaclientes.get(i).activo==true){
+                    clienteactivo=i;
+                }
+            }
         
-        
+        for (int j=0; j<bd.listaclientes.get(clienteactivo).listaseguros.size();j++)
+            if (bd.listaclientes.get(clienteactivo).listaseguros.get(j).tipo==tseguro.Saude){
+                bd.listaclientes.get(clienteactivo).listaseguros.get(j).despesa(despesa);
+                JOptionPane.showMessageDialog(null,bd.listaclientes.get(clienteactivo).listaseguros.get(j).toString());
+                break;
+            }  
         
         System.out.println("Apresentar despesa saida");
         setVisible(false);

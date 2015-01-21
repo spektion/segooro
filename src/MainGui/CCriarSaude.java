@@ -119,7 +119,7 @@ public class CCriarSaude extends javax.swing.JPanel {
                     clienteactivo=i;
                 }
             }    
-        
+        //JOptionPane.showMessageDialog(null,bd.listaclientes.get(clienteactivo).titular.nome);
         if (bd.listaclientes.get(clienteactivo).titular.idade>80){ //Se tiver acima de 80 não pode fazer seguro
            JOptionPane.showMessageDialog(null,"A idade nao permite fazer nenhum seguro"); //Mensagem ao utilizador
         }
@@ -129,9 +129,9 @@ public class CCriarSaude extends javax.swing.JPanel {
            }
            else{
                if (bd.listaclientes.get(clienteactivo).titular.idade>59)  //É senior?
-                 bd.getListaclientes().get(0).getListaseguros().add(new Tssaude(150+bd.listaclientes.get(clienteactivo).titular.idade,5000)); //Criado seguro saude senior
+                 bd.getListaclientes().get(clienteactivo).getListaseguros().add(new Tssaude(150+bd.listaclientes.get(clienteactivo).titular.idade,5000)); //Criado seguro saude senior
                else //Então é adulto
-                 bd.getListaclientes().get(0).getListaseguros().add(new Tssaude(150+bd.listaclientes.get(clienteactivo).titular.idade,0)); //Criado seguro saude adulto
+                 bd.getListaclientes().get(clienteactivo).getListaseguros().add(new Tssaude(150+bd.listaclientes.get(clienteactivo).titular.idade,0)); //Criado seguro saude adulto
            }
 
         //System.out.println("criar saude saida");
