@@ -105,7 +105,7 @@ public class CCriarSaude extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int agenteactivo=-1;
+        int agenteactivo=0;
         
             for (int i=0;i<bd.getListaagentes().size();i++){
                 if (bd.listaagentes.get(i).activo==true){
@@ -113,7 +113,7 @@ public class CCriarSaude extends javax.swing.JPanel {
                 }
             }
         
-        int clienteactivo=-1;
+        int clienteactivo=0;
         for (int i=0;i<bd.getListaclientes().size();i++){
                 if (bd.listaclientes.get(i).activo==true){
                     clienteactivo=i;

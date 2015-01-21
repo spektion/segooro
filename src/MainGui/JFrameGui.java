@@ -150,7 +150,7 @@ public class JFrameGui extends javax.swing.JFrame {
                 bd.getListaclientes().get(0).getListaseguros().add(new Tsveiculo(150*0.97,tveiculo.Moto,false)); //Desconto de 3%
             else  // É porque teve acidentes
                 bd.getListaclientes().get(0).getListaseguros().add(new Tsveiculo(150*1.05,tveiculo.Moto,false)); //Penalização de 5%
-        
+        */
         try {       
             FileOutputStream fout = new FileOutputStream("dados.dat");
             ObjectOutputStream oos = new ObjectOutputStream(fout);
@@ -161,7 +161,7 @@ public class JFrameGui extends javax.swing.JFrame {
         }
         catch(Exception e) {
             System.out.println(e.getMessage());
-        }*/
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

@@ -181,6 +181,7 @@ public class CriarCli extends javax.swing.JPanel {
             }
         
             bd.listaclientes.add(new Cliente(bd.listatitulares.get(bd.listatitulares.size()-1),bd.listaagentes.get(agenteactivo)));
+            bd.listaclientes.get(bd.listaclientes.size()-1).activo=true;
             //bd.getListaagentes().add(new Agente(nome,bd.getListaagentes().size()));
             JOptionPane.showMessageDialog(null, "Inserção de Titular/Cliente " + nome + " efectuada com sucesso.");
             jTextField1.setText("");
